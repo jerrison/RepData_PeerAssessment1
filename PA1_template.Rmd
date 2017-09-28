@@ -7,11 +7,20 @@ keep_md: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
 ```
 
 ## Loading and preprocessing the data
 
+```{r loading}
+unzipped_data <- unzip(paste0("/Users/jerrison/Coursera_Submissions/",
+                              "Reproducible_Research/RepData_PeerAssessment1/",
+                              "activity.zip"))
 
+step_data <- read.csv(unzipped_data, 
+                      stringsAsFactors = FALSE)
+```
 
 ## What is mean total number of steps taken per day?
 
